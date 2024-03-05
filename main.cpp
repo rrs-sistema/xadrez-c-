@@ -35,10 +35,12 @@ int pintarTelaPreto(){
     for (lin = 0; lin < 8; lin++) { //
         for(r = 0; r < 3; r++) {
             for (col = 0; col < 8; col++) { //
+                char letra = ((lin + col) % 2 == 0) ? '\xB2' : ' ';
+                letra = (r == 1) ? 'P' : letra;
                 if((lin + col) % 2 == 0) {
-                    printf("\xB2\xB2\xB2\xB2\xB2");// Preenche a casinha
+                    printf("\xB2\xB2\%c\xB2\xB2",  letra);// Preenche a casinha
                 } else {
-                    printf("      ");
+                    printf("  %c  ",  letra);
                 }
             }
             printf("\n");
