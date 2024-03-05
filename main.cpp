@@ -31,16 +31,18 @@ char xadrez[8][8] = { // Cria o tabuleiro
 
 int pintarTelaPreto(){
     system("CLS");
-    int lin, col;
+    int lin, col, r;
     for (lin = 0; lin < 8; lin++) { //
-        for (col = 0; col < 8; col++) { //
-            if((lin + col) % 2 == 0) {
-                printf("\xB2");// Preenche a casinha
-            } else {
-                printf(" ");
+        for(r = 0; r < 3; r++) {
+            for (col = 0; col < 8; col++) { //
+                if((lin + col) % 2 == 0) {
+                    printf("\xB2\xB2\xB2\xB2\xB2");// Preenche a casinha
+                } else {
+                    printf("      ");
+                }
             }
+            printf("\n");
         }
-        printf("\n");
     }
 }
 
