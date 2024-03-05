@@ -35,8 +35,9 @@ int pintarTelaPreto(){
     for (lin = 0; lin < 8; lin++) { //
         for(r = 0; r < 3; r++) {
             for (col = 0; col < 8; col++) { //
-                char letra = ((lin + col) % 2 == 0) ? '\xB2' : ' ';
-                letra = (r == 1) ? 'P' : letra;
+                char peca = xadrez[lin][col];
+                char letra = ((lin + col) % 2 == 0) ? '\xB2' : ' '; // usando operador ternário
+                letra = (r == 1 && peca != ' ') ? peca : letra; // usando operador ternário
                 if((lin + col) % 2 == 0) {
                     printf("\xB2\xB2\%c\xB2\xB2",  letra);// Preenche a casinha
                 } else {
